@@ -15,5 +15,3 @@ with open(FILENAME, "r") as file:
         response = requests.post("http://localhost:5000/uusimittaus", json = obj)
         print(response.ok, response.json())
         time.sleep(0.1)
-
- 

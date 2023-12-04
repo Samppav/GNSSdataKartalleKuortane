@@ -15,7 +15,7 @@
         <script type="text/javascript" charset="utf-8"></script>    
     </head>
     <body>
-        <p>Kartta</p>
+        <p>Koti-Koulu matka</p>
         <div id="map" style="height: 600px; width: 800px;"></div>
 
         <script>
@@ -43,6 +43,8 @@
             }
             var marker = L.marker([62.789608, 22.821832]).addTo(map);
             marker.bindPopup("<b>Seinäjoen Ammattikorkeakoulu</b><br>SeAMK").openPopup();
+            var marker = L.marker([62.790404, 22.812506]).addTo(map);
+            marker.bindPopup("<b>Koti</b>").openPopup();
 
 
             
