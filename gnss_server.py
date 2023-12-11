@@ -2,6 +2,7 @@ import json
 from flask import Flask, render_template, request, Response
 from flask_cors import CORS, cross_origin # pip install flask-cors
 from flask_socketio import SocketIO, emit
+from gnsssimu import distance
 app = Flask(__name__)
 
 cors = CORS(app)
