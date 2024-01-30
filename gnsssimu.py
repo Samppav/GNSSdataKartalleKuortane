@@ -3,9 +3,9 @@ import json
 import requests
 import time
 import geopy.distance
- 
+
 FILENAME = "position.txt"
-distance = 0
+total_distance = 0
 with open(FILENAME, "r") as file:
     ekarivi = file.readline()
     ekalat = ekarivi.split("lat=")[1].split(",")[0]
@@ -17,8 +17,8 @@ with open(FILENAME, "r") as file:
         obj = [lat, lon]
         print(lat, lon)
         coords_1 = (lat, lon)
-        distance += geopy.distance.geodesic(coords_1, coords_2).km
-        print(distance)
+        total_distance += geopy.distance.geodesic(coords_1, coords_2).km
+        print(total_distance)
         response = requests.post("http://localhost:5000/uusimittaus", json = obj)
         print(response.ok, response.json())
         time.sleep(0.1)

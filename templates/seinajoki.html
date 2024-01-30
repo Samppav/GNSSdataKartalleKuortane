@@ -18,6 +18,7 @@
         <p>Koti-Koulu matka</p>
         <div id="map" style="height: 600px; width: 800px;"></div>
 
+
         <script>
             var map = L.map('map').setView([62.790036, 22.830900], 12);
 
@@ -47,8 +48,6 @@
             var marker = L.marker([62.790404, 22.812506]).addTo(map);
             marker.bindPopup("<b>Koti</b>").openPopup();
 
-
-            
             socket.on('position', data => { 
                 console.log('position:', JSON.parse(data.data))
                 readCoordinates();
